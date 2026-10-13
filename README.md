@@ -62,3 +62,11 @@ scripts/          extrair-logos.py
 ## Regras de conteúdo
 
 Preço não aparece no site. Nenhum número além de "8 anos" e "+200 empresas atendidas". Rafael Kiso só em uma linha pequena de credencial. Nome sempre "Ariela Felícia".
+
+## Verificação (13/10/2026)
+
+- `npm test`: 39 testes passando (lógica, componentes, SEO). `npm run lint` e `tsc --noEmit` limpos. `npm run build` gera tudo estático.
+- Lighthouse mobile (simulado, build de produção local): Performance 91–93, Acessibilidade 100, Boas práticas 100, SEO 100. CLS 0, TBT 40–90 ms.
+- **LCP simulado: 3,0–3,3 s, acima da meta de 2,5 s.** No Chromium sem limitação a foto do hero aparece em ~300 ms (LCP e FCP), e o Lighthouse observa 1,3 s sem simulação. A estimativa simulada (4G lento + CPU 4x) soma ~2 s de atraso de renderização que não consegui atribuir. Tentativas que não mudaram o resultado: `preload` + `fetchPriority="high"` na foto, grão em PNG no lugar do filtro SVG, fontes estáticas, menos fontes pré-carregadas. Próximo passo possível: reduzir o JavaScript de hidratação (transformar os client components em ilhas menores) e medir no PageSpeed Insights com o site publicado.
+- Conteúdo conferido no HTML do servidor (equivale a sem JavaScript): H1 único, todas as seções, FAQ e logos presentes, sem preço.
+- Sem estouro horizontal em 320, 390, 1024, 1440 e 1905 px.
