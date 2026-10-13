@@ -12,10 +12,12 @@ import { Faq } from "@/components/Faq";
 import { Fechamento } from "@/components/Fechamento";
 import { Rota } from "@/components/Rota";
 import { WhatsAppFlutuante } from "@/components/WhatsAppFlutuante";
+import { buildJsonLd, serializeJsonLd } from "@/lib/seo";
 
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildJsonLd()) }} />
       <main className="papel" style={{ position: "relative" }}>
         <Rota />
         <Hero />
