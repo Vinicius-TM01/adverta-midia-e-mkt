@@ -1,0 +1,29 @@
+.rotulo{font-family:var(--font-mao),cursive;font-weight:700;font-size:1.7rem;color:var(--roxo);display:inline-block;transform:rotate(-2deg);margin-bottom:8px}
+.titulo{font-weight:800;font-size:clamp(2rem,4.4vw,4rem);line-height:1;letter-spacing:-.04em;max-width:20ch;margin-bottom:24px}
+.texto{font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.55;max-width:56ch;margin-bottom:16px;font-weight:500}
+.texto mark{background:var(--marca-texto);padding:0 .2em;color:inherit}
+.sobre{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,5vw,80px);align-items:center;padding-block:clamp(56px,10vh,120px)}
+.sobreFoto{background:#fff;padding:12px;transform:rotate(-2deg);box-shadow:0 24px 40px -18px rgba(30,15,51,.45)}
+.sobreFoto img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.credencial{font-family:var(--font-mono),monospace;font-size:.78rem;opacity:.75;margin-top:22px;max-width:60ch}
+.prova{padding-block:clamp(48px,8vh,96px)}
+.logos{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;align-items:center;margin-top:24px}
+.logos li{background:#fff;padding:14px;display:grid;place-items:center;min-height:90px}
+.logos img{width:auto;height:auto;max-width:100%;max-height:64px;object-fit:contain}
+.execucao{padding-block:clamp(48px,8vh,96px)}
+.itens{list-style:none;display:flex;flex-wrap:wrap;gap:12px}
+.itens li{border:2px solid var(--tinta);padding:12px 16px;font-family:var(--font-mono),monospace;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(255,255,255,.6)}
+.faq{padding-block:clamp(48px,8vh,96px)}
+.faq > *{max-width:900px}
+.pergunta{border-top:2px dashed rgba(30,15,51,.3);padding:18px 0}
+.pergunta summary{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;cursor:pointer}
+.pergunta p{margin-top:10px;font-size:1.08rem;line-height:1.55;max-width:60ch}
+.fechamento{padding-block:clamp(64px,12vh,140px);background:var(--tinta);color:var(--papel)}
+.fechamento .rotulo{color:var(--marca-texto)}
+.cta{display:inline-block;background:var(--marca-texto);color:var(--tinta);font-weight:800;font-size:1.15rem;padding:18px 26px;box-shadow:6px 6px 0 var(--laranja)}
+.contatos{list-style:none;margin-top:36px;display:grid;gap:8px;font-family:var(--font-mono),monospace;font-size:.95rem}
+.contatos a{text-decoration:underline;text-underline-offset:4px}
+.rodape{margin-top:36px;font-size:.8rem;opacity:.6}
+.logos .largo{grid-column:span 2}
+@media (max-width:420px){.logos .largo{grid-column:auto}}
+@media (max-width:900px){.sobre{grid-template-columns:1fr}.sobreFoto{max-width:380px}}

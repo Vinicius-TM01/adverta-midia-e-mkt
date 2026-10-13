@@ -5,19 +5,33 @@ import { OPlano } from "@/components/OPlano";
 import { Pilares } from "@/components/Pilares";
 import { PorQueAntes } from "@/components/PorQueAntes";
 import { Teste } from "@/components/Teste";
+import { Sobre } from "@/components/Sobre";
+import { Prova } from "@/components/Prova";
+import { Execucao } from "@/components/Execucao";
+import { Faq } from "@/components/Faq";
+import { Fechamento } from "@/components/Fechamento";
 import { Rota } from "@/components/Rota";
+import { WhatsAppFlutuante } from "@/components/WhatsAppFlutuante";
 
 export default function Home() {
   return (
-    <main className="papel" style={{ position: "relative" }}>
-      <Rota />
-      <Hero />
-      <Erro />
-      <Virada />
-      <OPlano />
-      <Pilares />
-      <PorQueAntes />
-      <Teste />
-    </main>
+    <>
+      <main className="papel" style={{ position: "relative" }}>
+        <Rota />
+        <Hero />
+        <Erro />
+        <Virada />
+        <OPlano />
+        <Pilares />
+        <PorQueAntes />
+        <Teste />
+        <Sobre />
+        <Prova />
+        <Execucao />
+        <Faq />
+      </main>
+      <Fechamento />
+      <WhatsAppFlutuante />
+    </>
   );
 }
