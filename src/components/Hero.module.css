@@ -1,0 +1,60 @@
+.hero{position:relative;min-height:100svh;padding:0 var(--pad) 28px;display:flex;flex-direction:column;isolation:isolate;overflow:hidden;
+  background:
+    linear-gradient(var(--papel-2) 1px,transparent 1px) 0 0/100% 38px,
+    var(--papel)}
+/* margem de caderno */
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:calc(var(--pad) - 14px);width:2px;background:rgba(255,107,26,.55);z-index:-1}
+/* grão de papel */
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;z-index:-1;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/><feColorMatrix values='0 0 0 0 .4  0 0 0 0 .3  0 0 0 0 .5  0 0 0 .45 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.stage{position:relative;flex:1;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(24px,4vw,72px);padding:clamp(8px,2vh,28px) 0 clamp(24px,4vh,48px);align-items:center}
+.carimbo{display:inline-block;font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;border:2px solid var(--laranja);color:var(--laranja);padding:6px 10px;transform:rotate(-2.5deg);margin-bottom:24px}
+.h1{font-weight:800;font-size:clamp(2.6rem,min(6.2vw,6.6rem),6.6rem);line-height:.94;letter-spacing:-.045em;max-width:12ch;position:relative}
+.h1 .l{display:block;white-space:nowrap}
+.h1 .alvo{position:relative;display:inline-block;z-index:0}
+/* marca-texto que “passa” por cima */
+.h1 .alvo::before{content:"";position:absolute;left:-2%;right:-2%;top:46%;height:44%;background:var(--marca-texto);z-index:-1;transform-origin:left;transform:scaleX(0) rotate(-.8deg);animation:marca .6s .5s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes marca{to{transform:scaleX(1) rotate(-.8deg)}}
+.h1 .corte{position:relative;display:inline-block;color:rgba(30,15,51,.5)}
+.h1 .corte svg{position:absolute;left:-6%;top:6%;width:112%;height:92%;overflow:visible}
+.h1 .corte path{fill:none;stroke:var(--roxo);stroke-width:7;stroke-linecap:round;stroke-dasharray:500;stroke-dashoffset:500;animation:tinta .6s 1.2s ease-out forwards}
+@keyframes tinta{to{stroke-dashoffset:0}}
+@keyframes escreve{from{opacity:1;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
+.sub{font-size:clamp(1.05rem,1.35vw,1.3rem);line-height:1.5;max-width:40ch;margin:28px 0 30px;font-weight:500}
+.sub em{font-style:normal;background:linear-gradient(transparent 60%,rgba(106,36,176,.22) 60%)}
+.acoes{display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center}
+.cta{display:inline-flex;align-items:center;gap:14px;background:var(--roxo);color:var(--papel);font-weight:800;font-size:1.1rem;padding:18px 26px;border-radius:2px;box-shadow:5px 5px 0 var(--tinta);transition:transform .2s,box-shadow .2s;letter-spacing:-.01em}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--tinta)}
+.teste{font-family:var(--font-mono);font-size:.84rem;text-transform:uppercase;letter-spacing:.05em;border:2px solid var(--tinta);padding:15px 18px;background:rgba(255,255,255,.5);transition:background .2s,transform .2s}
+.teste:hover{background:var(--marca-texto);transform:translate(-2px,-2px)}
+/* foto rasgada + fita */
+.foto{position:relative;justify-self:center;width:min(100%,440px);margin:6px 0;transform:rotate(2.2deg)}
+.foto .papel{position:relative;background:#fff;padding:12px 12px 56px;box-shadow:0 1px 0 rgba(30,15,51,.15),0 24px 40px -18px rgba(30,15,51,.45)}
+.foto img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 14%;filter:saturate(1.05)}
+.foto .legenda{position:absolute;left:18px;right:18px;bottom:14px;font-family:var(--font-mao);font-size:1.5rem;font-weight:700;color:var(--tinta);display:flex;justify-content:space-between;align-items:baseline}
+.foto .legenda small{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:400;opacity:.7}
+.fita{position:absolute;top:-16px;left:50%;width:132px;height:34px;transform:translateX(-50%) rotate(-3deg);background:rgba(255,212,59,.72);box-shadow:0 1px 0 rgba(0,0,0,.08);clip-path:polygon(2% 0,98% 4%,100% 50%,97% 100%,3% 96%,0 48%)}
+/* post-its com os dados */
+.nota{position:absolute;z-index:3;width:150px;padding:16px 14px 18px;font-family:var(--font-mao);font-weight:700;color:var(--tinta);box-shadow:0 14px 22px -12px rgba(30,15,51,.5);line-height:1}
+.nota b{display:block;font-family:var(--font-display),system-ui,sans-serif;font-weight:800;font-size:3.1rem;letter-spacing:-.05em;line-height:.9}
+.nota span{font-size:1.35rem}
+.n1{left:-76px;bottom:140px;background:var(--marca-texto);transform:rotate(-6deg)}
+.n2{right:-30px;bottom:38px;background:#fff;transform:rotate(5deg);border-top:8px solid var(--laranja)}
+/* margem: os seis pilares como checklist anotado */
+.margem{margin-top:0;padding-top:20px;border-top:2px dashed rgba(30,15,51,.28);display:flex;flex-wrap:wrap;gap:10px 14px;font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;align-items:center}
+.margem .rotulo{font-family:var(--font-mao);font-size:1.5rem;text-transform:none;letter-spacing:0;color:var(--roxo);margin-right:6px;transform:rotate(-2deg)}
+.margem li{list-style:none;border:1.5px solid var(--tinta);padding:7px 11px 6px;background:rgba(255,255,255,.55)}
+.margem li::before{content:"✓ ";color:var(--roxo);font-weight:500}
+@media (max-width:900px){
+  .stage{grid-template-columns:1fr}
+  .h1{max-width:none;font-size:clamp(2.2rem,11.2vw,5rem)}
+  .foto{width:min(84%,380px);margin:34px 0 20px}
+  .n1{left:-16px;bottom:96px;width:128px}
+  .n2{right:-10px;bottom:20px;width:128px}
+  .stage{align-items:start}
+  .margem{margin-top:8px}
+  .nota b{font-size:2.5rem}
+}
+.h1 .corte::after{content:attr(data-corrige);position:absolute;left:4%;top:-48%;font-family:var(--font-mao),cursive;font-weight:700;font-size:.62em;letter-spacing:0;color:var(--roxo);-webkit-text-stroke:7px var(--papel);paint-order:stroke fill;transform:rotate(-7deg);white-space:nowrap;clip-path:inset(0 100% 0 0);animation:escreve .6s 1.75s steps(14) forwards}
+
+.margem .rotulo{border:0;background:none;padding:0}
