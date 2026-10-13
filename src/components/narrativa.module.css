@@ -1,0 +1,22 @@
+.secao{padding-block:clamp(56px,10vh,120px)}
+.rotulo{font-family:var(--font-mao),cursive;font-weight:700;font-size:1.7rem;color:var(--roxo);transform:rotate(-2deg);display:inline-block;margin-bottom:10px}
+.titulo{font-weight:800;font-size:clamp(2rem,4.6vw,4.4rem);line-height:1;letter-spacing:-.04em;max-width:18ch;margin-bottom:28px}
+.texto{font-size:clamp(1.05rem,1.4vw,1.35rem);line-height:1.55;max-width:56ch;margin-bottom:18px;font-weight:500}
+.texto mark{background:var(--marca-texto);padding:0 .2em;color:inherit}
+.destaque{font-weight:800;font-size:clamp(1.3rem,2.4vw,2rem);line-height:1.15;letter-spacing:-.02em;max-width:34ch;margin-top:28px;padding-left:18px;border-left:6px solid var(--laranja)}
+.virada{padding-block:clamp(72px,16vh,180px);background:var(--tinta);color:var(--papel)}
+.viradaFrase{font-weight:800;font-size:clamp(2.2rem,6.4vw,6.4rem);line-height:.98;letter-spacing:-.045em;max-width:16ch}
+.viradaFecho{font-family:var(--font-mao),cursive;font-weight:700;font-size:clamp(2rem,4.4vw,4rem);color:var(--marca-texto);margin-top:24px;transform:rotate(-2deg);display:inline-block}
+.pilares{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:12px}
+.pilar{background:#fff;padding:22px 20px 26px;box-shadow:0 14px 24px -16px rgba(30,15,51,.5);border-top:8px solid var(--roxo)}
+.pilar:nth-child(odd){transform:rotate(-.8deg)}
+.pilar:nth-child(even){transform:rotate(.7deg);border-top-color:var(--laranja)}
+.pilar h3{font-weight:800;font-size:1.5rem;letter-spacing:-.03em;margin-bottom:8px}
+.pilar p{font-size:1.02rem;line-height:1.5}
+.duelo{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.sem,.com{padding:24px;font-size:1.15rem;line-height:1.5}
+.sem{background:rgba(30,15,51,.06);border:2px dashed rgba(30,15,51,.35)}
+.com{background:var(--marca-texto);box-shadow:6px 6px 0 var(--tinta)}
+.sem h3,.com h3{font-family:var(--font-mono),monospace;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+@media (max-width:900px){.pilares{grid-template-columns:1fr 1fr}.duelo{grid-template-columns:1fr}}
+@media (max-width:560px){.pilares{grid-template-columns:1fr}}
