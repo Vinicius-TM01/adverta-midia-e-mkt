@@ -20,3 +20,25 @@
 .sem h3,.com h3{font-family:var(--font-mono),monospace;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
 @media (max-width:900px){.pilares{grid-template-columns:1fr 1fr}.duelo{grid-template-columns:1fr}}
 @media (max-width:560px){.pilares{grid-template-columns:1fr}}
+
+/* marque o que falta */
+.lacunas{margin-top:34px;max-width:760px;padding:clamp(18px,3vw,30px);background:var(--superficie);border:1px dashed rgba(181,139,230,.5);box-shadow:8px 8px 0 rgba(139,63,217,.55)}
+.lacunasTitulo{font-family:var(--font-mao),cursive;font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);color:var(--marca-texto);margin-bottom:14px;line-height:1.1}
+.lacunasGrade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lacuna{display:flex;align-items:center;gap:12px;text-align:left;font:inherit;font-weight:800;font-size:1.05rem;letter-spacing:-.01em;color:var(--texto);padding:14px 16px;border:2px solid rgba(181,139,230,.4);background:rgba(139,63,217,.1);cursor:pointer;transition:transform .2s,border-color .2s,background-color .25s,color .25s}
+.lacuna:hover{border-color:var(--roxo-claro);transform:translate(-2px,-2px)}
+.lacunaCaixa{flex:none;display:grid;place-items:center;width:26px;height:26px;border:2px solid var(--roxo-claro);color:var(--laranja);font-weight:800;font-size:1.05rem;line-height:1}
+.lacunaTexto{position:relative}
+.lacunaAtiva{background:var(--marca-texto);border-color:var(--marca-texto);color:var(--tinta);animation:pop-l .32s cubic-bezier(.3,1.6,.5,1)}
+.lacunaAtiva .lacunaCaixa{border-color:var(--tinta);animation:risca .3s ease-out}
+@keyframes pop-l{from{transform:scale(.96)}50%{transform:scale(1.03)}}
+@keyframes risca{from{transform:rotate(-30deg) scale(.4)}}
+.lacunasResumo{margin-top:16px;font-family:var(--font-mono),monospace;font-size:.88rem;letter-spacing:.02em;color:var(--texto-suave);min-height:1.4em}
+.lacunasCta{display:inline-block;margin-top:16px;background:var(--marca-texto);color:var(--tinta);font-weight:800;font-size:1.05rem;padding:16px 22px;box-shadow:5px 5px 0 var(--roxo-vivo);animation:cta-entra .45s cubic-bezier(.3,1.5,.5,1) both;transition:transform .2s,box-shadow .2s}
+.lacunasCta:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--roxo-vivo)}
+@keyframes cta-entra{from{opacity:0;transform:translateY(12px) scale(.96)}}
+@media (max-width:560px){.lacunasGrade{grid-template-columns:1fr}}
+.pilar{transition:box-shadow .3s,background-color .3s}
+.pilar:hover{background:#2a1749;box-shadow:0 28px 40px -16px rgba(139,63,217,.6)}
+.pilar h3{transition:transform .25s}
+.pilar:hover h3{transform:translateX(5px)}

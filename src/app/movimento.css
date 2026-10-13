@@ -1,0 +1,25 @@
+/* Movimento. Só transform/opacity/clip-path; a classe .mov vem do script do <head> (ausente com movimento reduzido). */
+
+/* Revelar ao rolar. Usa as propriedades individuais translate/rotate para não brigar com os transform de cada componente. */
+.mov [data-revela]{opacity:0;transition:opacity .7s ease,translate .8s cubic-bezier(.2,.7,.2,1),rotate .8s cubic-bezier(.2,.7,.2,1),scale .6s cubic-bezier(.3,1.5,.5,1),clip-path .9s steps(16),transform .3s,box-shadow .3s,background-color .3s;transition-delay:calc(var(--i,0)*90ms)}
+/* Rede de segurança: se o JS não assumir em 5 s (data-vivo ausente), tudo aparece. */
+.mov:not([data-vivo]) [data-revela]{animation:garantia 0s 5s forwards}
+.mov [data-revela="sobe"]{translate:0 34px}
+.mov [data-revela="cai"]{translate:0 -46px;rotate:-5deg}
+.mov [data-revela="carimba"]{scale:1.5;rotate:-8deg}
+.mov [data-revela="escreve"]{opacity:1;clip-path:inset(0 100% 0 0)}
+.mov [data-revela="palavras"]{opacity:1}
+.mov [data-revela].visto{opacity:1;translate:none;rotate:none;scale:none;clip-path:inset(0 0 0 0);animation:none}
+@keyframes garantia{to{opacity:1;translate:none;rotate:none;scale:none;clip-path:inset(0 0 0 0)}}
+
+/* A frase da virada acende palavra por palavra */
+.mov [data-revela="palavras"] .pal{opacity:.14;transition:opacity .5s ease,color .5s ease;transition-delay:calc(var(--i)*110ms + 150ms)}
+.mov [data-revela="palavras"].visto .pal{opacity:1}
+.mov [data-revela="palavras"].visto .pal:nth-child(n+7):nth-child(-n+9){color:var(--marca-texto)}
+
+/* Botão flutuante: entra e pulsa de leve */
+.zap{position:fixed;right:16px;bottom:16px;z-index:20;background:var(--marca-texto);color:var(--tinta);font-weight:800;padding:14px 18px;box-shadow:4px 4px 0 var(--roxo-vivo);animation:zap-entra .5s cubic-bezier(.3,1.4,.5,1) both;transition:transform .2s,box-shadow .2s}
+.zap::after{content:"";position:absolute;inset:0;border:2px solid var(--marca-texto);pointer-events:none;animation:zap-onda 3.2s 1.6s ease-out infinite}
+.zap:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--roxo-vivo)}
+@keyframes zap-entra{from{transform:translateY(40px);opacity:0}}
+@keyframes zap-onda{0%{transform:scale(1);opacity:.9}60%,100%{transform:scale(1.18,1.55);opacity:0}}

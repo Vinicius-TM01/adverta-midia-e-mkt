@@ -8,6 +8,7 @@ const PILARES = ["Posicionamento", "Público", "Jornada", "Territórios e temas"
 export function Hero() {
   return (
     <header id="inicio" className={styles.hero}>
+      <span className={styles.luz} aria-hidden="true" />
       <Nav />
       <div className={styles.stage}>
         <div className={styles.texto}>
@@ -25,7 +26,7 @@ export function Hero() {
           <p className={styles.sub}>Planejamento estratégico de conteúdo para negócios em Cacoal e região. <em>Antes do primeiro post</em>, definimos o que comunicar, para quem e com qual objetivo.</p>
           <div className={styles.acoes}>
             <CtaWhatsApp className={styles.cta} />
-            <a className={styles.teste} href="#teste">Fazer o teste do achismo</a>
+            <a className={styles.teste} href="#teste" data-magnetico>Fazer o teste do achismo</a>
           </div>
         </div>
         <figure className={styles.foto}>

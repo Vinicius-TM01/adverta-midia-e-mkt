@@ -25,8 +25,7 @@ export function WhatsAppFlutuante() {
   }, []);
   if (noHero || noFechamento) return null;
   return (
-    <a href={buildWhatsAppUrl(MENSAGENS.inicial)} onClick={() => track("cta_click", { origem: "flutuante" })}
-      style={{ position: "fixed", right: 16, bottom: 16, zIndex: 20, background: "#FFD43B", color: "#1E0F33", fontWeight: 800, padding: "14px 18px", boxShadow: "4px 4px 0 #8B3FD9" }}>
+    <a className="zap" href={buildWhatsAppUrl(MENSAGENS.inicial)} onClick={() => track("cta_click", { origem: "flutuante" })}>
       {rotulo} →
     </a>
   );

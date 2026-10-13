@@ -1,0 +1,14 @@
+.faixas{position:relative;padding-block:56px 44px;overflow-x:clip}
+.so{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.faixa{display:block;overflow:hidden;width:112%;margin-left:-6%}
+.a{background:var(--marca-texto);color:var(--tinta);transform:rotate(-1.6deg);padding:14px 0;position:relative;z-index:2;box-shadow:0 14px 30px -14px rgba(0,0,0,.7)}
+.b{background:var(--roxo);color:var(--texto);transform:rotate(1.2deg);padding:12px 0;margin-top:14px;border-block:2px solid var(--roxo-claro)}
+.trilho{display:flex;width:max-content;animation:corre 38s linear infinite}
+.b .trilho{animation-direction:reverse;animation-duration:46s}
+.faixa:hover .trilho{animation-play-state:paused}
+.grupo{display:flex;flex-shrink:0;list-style:none}
+.grupo li{white-space:nowrap;font-weight:800;font-size:clamp(1.3rem,2.6vw,2.2rem);letter-spacing:-.03em;padding-inline:.5em;display:flex;align-items:center;gap:1em}
+.b .grupo li{font-family:var(--font-mono),monospace;font-weight:400;font-size:clamp(.9rem,1.4vw,1.2rem);text-transform:uppercase;letter-spacing:.1em}
+.grupo li span{color:var(--laranja);font-family:var(--font-mao),cursive;font-size:1.3em}
+.b .grupo li span{color:var(--marca-texto)}
+@keyframes corre{to{transform:translateX(-50%)}}

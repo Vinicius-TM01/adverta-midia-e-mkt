@@ -4,7 +4,7 @@ import { track } from "@/lib/analytics";
 
 export function CtaWhatsApp({ className }: { className?: string }) {
   return (
-    <a className={className} href={buildWhatsAppUrl(MENSAGENS.inicial)} onClick={() => track("cta_click", { origem: "hero" })}>
+    <a className={className} data-magnetico href={buildWhatsAppUrl(MENSAGENS.inicial)} onClick={() => track("cta_click", { origem: "hero" })}>
       Agendar conversa inicial →
     </a>
   );

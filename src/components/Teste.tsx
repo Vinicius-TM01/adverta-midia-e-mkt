@@ -29,8 +29,8 @@ export function Teste() {
   const pergunta = PERGUNTAS[passo];
   return (
     <section id="teste" className={`container ${s.secao}`} aria-labelledby="teste-titulo">
-      <p className={s.rotulo}>teste rápido, sem cadastro</p>
-      <h2 id="teste-titulo" className={s.titulo}>Teste do achismo</h2>
+      <p className={s.rotulo} data-revela="escreve">teste rápido, sem cadastro</p>
+      <h2 id="teste-titulo" className={s.titulo} data-revela="sobe">Teste do achismo</h2>
       <div className={s.caderno} aria-live="polite">
         {resultado ? (
           <div className={s.resultado}>
@@ -46,6 +46,7 @@ export function Teste() {
         ) : (
           <fieldset className={s.pergunta}>
             <legend>
+              <span className={s.barra} aria-hidden="true"><span style={{ width: `${((passo + 1) / PERGUNTAS.length) * 100}%` }} /></span>
               <span className={s.contador}>Pergunta {passo + 1} de {PERGUNTAS.length} · {pergunta.pilar}</span>
               <span className={s.enunciado}>{pergunta.texto}</span>
             </legend>

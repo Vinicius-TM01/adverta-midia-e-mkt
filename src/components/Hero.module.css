@@ -58,3 +58,21 @@
   .nota b{font-size:2.5rem}
 }
 @media (max-width:360px){.cta{font-size:1rem;padding:16px 18px}}
+
+/* vida: luz que segue o cursor, entradas escalonadas, flutuação e inclinação da polaroide */
+.luz{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px circle at var(--mx,72%) var(--my,40%),rgba(181,139,230,.2),transparent 62%)}
+.carimbo{animation:carimba .55s .1s cubic-bezier(.3,1.6,.5,1) backwards}
+@keyframes carimba{from{opacity:0;transform:rotate(-12deg) scale(1.7)}}
+.sub{animation:sobe .8s .55s cubic-bezier(.2,.7,.2,1) backwards}
+.acoes{animation:sobe .8s .75s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes sobe{from{transform:translateY(26px)}}
+.margem li{animation:chip .55s calc(1s + var(--k,0)*90ms) cubic-bezier(.3,1.5,.5,1) backwards}
+.margem li:nth-child(2){--k:1}.margem li:nth-child(3){--k:2}.margem li:nth-child(4){--k:3}.margem li:nth-child(5){--k:4}.margem li:nth-child(6){--k:5}.margem li:nth-child(7){--k:6}
+@keyframes chip{from{opacity:0;transform:translateY(14px) rotate(-3deg)}}
+.foto{animation:flutua 8s 1.6s ease-in-out infinite}
+@keyframes flutua{0%,100%{transform:rotate(2.2deg) translateY(0)}50%{transform:rotate(1.5deg) translateY(-12px)}}
+.foto .papel{transform:perspective(900px) rotateY(calc(var(--tx,0)*7deg)) rotateX(calc(var(--ty,0)*-5deg));transition:transform .3s ease-out;will-change:transform}
+.nota{--r:-6deg;transform:rotate(var(--r));translate:calc(var(--tx,0)*-14px) calc(var(--ty,0)*-10px);transition:translate .35s ease-out;animation:cola .7s 1.9s cubic-bezier(.3,1.5,.5,1) backwards}
+.n1{--r:-6deg}.n2{--r:5deg;animation-delay:2.2s}
+@keyframes cola{from{opacity:0;transform:translateY(-80px) rotate(calc(var(--r)*3)) scale(1.25)}}
+.cta,.teste{translate:var(--ix,0) var(--iy,0)}
