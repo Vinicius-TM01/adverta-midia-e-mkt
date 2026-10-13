@@ -1,0 +1,20 @@
+.secao{padding-block:clamp(56px,10vh,120px)}
+.rotulo{font-family:var(--font-mao),cursive;font-weight:700;font-size:1.7rem;color:var(--roxo);display:inline-block;transform:rotate(-2deg);margin-bottom:8px}
+.titulo{font-weight:800;font-size:clamp(2rem,4.6vw,4.4rem);line-height:1;letter-spacing:-.04em;margin-bottom:28px}
+.caderno{background:#fff;max-width:760px;padding:clamp(20px,4vw,40px);box-shadow:8px 8px 0 var(--tinta);border:2px solid var(--tinta)}
+.pergunta{border:0;display:grid;gap:12px}
+.contador{display:block;font-family:var(--font-mono),monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--roxo);margin-bottom:10px}
+.enunciado{display:block;font-weight:800;font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:8px}
+.opcao{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:2px solid rgba(30,15,51,.25);cursor:pointer;font-size:1.05rem;line-height:1.4}
+.opcao:hover{border-color:var(--roxo)}
+.opcao input{margin-top:4px;accent-color:var(--roxo);width:18px;height:18px}
+.marcada{background:var(--marca-texto);border-color:var(--tinta)}
+.opcao:has(input:focus-visible){outline:3px solid var(--roxo);outline-offset:3px}
+.proxima,.cta{justify-self:start;background:var(--roxo);color:var(--papel);font:inherit;font-weight:800;font-size:1.05rem;padding:16px 24px;border:0;box-shadow:5px 5px 0 var(--tinta);cursor:pointer;display:inline-block}
+.proxima:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.resultado h3{font-weight:800;font-size:clamp(1.8rem,3.4vw,2.8rem);letter-spacing:-.03em;margin:4px 0 12px}
+.pontos{font-family:var(--font-mao),cursive;font-weight:700;font-size:2.4rem;color:var(--roxo)}
+.resultado p{font-size:1.1rem;line-height:1.55;max-width:52ch}
+.acoes{display:flex;flex-wrap:wrap;gap:16px 22px;align-items:center;margin:22px 0 14px}
+.refazer{font:inherit;font-family:var(--font-mono),monospace;font-size:.85rem;background:none;border:2px solid var(--tinta);padding:12px 16px;cursor:pointer}
+.aviso{font-size:.88rem!important;opacity:.7}

@@ -4,6 +4,7 @@ import { Virada } from "@/components/Virada";
 import { OPlano } from "@/components/OPlano";
 import { Pilares } from "@/components/Pilares";
 import { PorQueAntes } from "@/components/PorQueAntes";
+import { Teste } from "@/components/Teste";
 import { Rota } from "@/components/Rota";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <OPlano />
       <Pilares />
       <PorQueAntes />
+      <Teste />
     </main>
   );
 }
