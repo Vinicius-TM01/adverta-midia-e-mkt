@@ -40,8 +40,8 @@
 .nota{position:absolute;z-index:3;width:150px;padding:16px 14px 18px;font-family:var(--font-mao);font-weight:700;box-shadow:0 18px 26px -12px rgba(0,0,0,.7);line-height:1}
 .nota b{display:block;font-family:var(--font-display),system-ui,sans-serif;font-weight:800;font-size:3.1rem;letter-spacing:-.05em;line-height:.9}
 .nota span{font-size:1.35rem}
-.n1{left:-76px;bottom:140px;background:var(--marca-texto);color:var(--tinta);transform:rotate(-6deg)}
-.n2{right:-30px;bottom:38px;background:var(--roxo-vivo);color:#fff;transform:rotate(5deg);border-top:8px solid var(--laranja)}
+.n1{left:-76px;bottom:230px;background:var(--marca-texto);color:var(--tinta);transform:rotate(-6deg)}
+.n2{right:-30px;bottom:84px;background:var(--roxo-vivo);color:#fff;transform:rotate(5deg);border-top:8px solid var(--laranja)}
 /* margem: os seis pilares como checklist anotado */
 .margem{margin-top:0;padding-top:20px;border-top:2px dashed rgba(181,139,230,.35);display:flex;flex-wrap:wrap;gap:10px 14px;font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;align-items:center;color:var(--texto)}
 .margem .rotulo{font-family:var(--font-mao);font-size:1.5rem;text-transform:none;letter-spacing:0;color:var(--roxo-claro);margin-right:6px;transform:rotate(-2deg);border:0;background:none;padding:0}
@@ -51,10 +51,28 @@
   .stage{grid-template-columns:1fr}
   .h1{max-width:none;font-size:clamp(2.2rem,11.2vw,5rem)}
   .foto{width:min(84%,380px);margin:34px 0 20px}
-  .n1{left:-16px;bottom:96px;width:128px}
-  .n2{right:-10px;bottom:20px;width:128px}
+  .n1{left:-16px;bottom:200px;width:128px}
+  .n2{right:-10px;bottom:76px;width:128px}
   .stage{align-items:start}
   .margem{margin-top:8px}
   .nota b{font-size:2.5rem}
 }
 @media (max-width:360px){.cta{font-size:1rem;padding:16px 18px}}
+
+/* vida: luz que segue o cursor, entradas escalonadas, flutuação e inclinação da polaroide */
+.luz{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px circle at var(--mx,72%) var(--my,40%),rgba(181,139,230,.2),transparent 62%)}
+.carimbo{animation:carimba .55s .1s cubic-bezier(.3,1.6,.5,1) backwards}
+@keyframes carimba{from{opacity:0;transform:rotate(-12deg) scale(1.7)}}
+.sub{animation:sobe .8s .55s cubic-bezier(.2,.7,.2,1) backwards}
+.acoes{animation:sobe .8s .75s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes sobe{from{transform:translateY(26px)}}
+.margem li{animation:chip .55s calc(1s + var(--k,0)*90ms) cubic-bezier(.3,1.5,.5,1) backwards}
+.margem li:nth-child(2){--k:1}.margem li:nth-child(3){--k:2}.margem li:nth-child(4){--k:3}.margem li:nth-child(5){--k:4}.margem li:nth-child(6){--k:5}.margem li:nth-child(7){--k:6}
+@keyframes chip{from{opacity:0;transform:translateY(14px) rotate(-3deg)}}
+.foto{animation:flutua 8s 1.6s ease-in-out infinite}
+@keyframes flutua{0%,100%{transform:rotate(2.2deg) translateY(0)}50%{transform:rotate(1.5deg) translateY(-12px)}}
+.foto .papel{transform:perspective(900px) rotateY(calc(var(--tx,0)*7deg)) rotateX(calc(var(--ty,0)*-5deg));transition:transform .3s ease-out;will-change:transform}
+.nota{--r:-6deg;transform:rotate(var(--r));translate:calc(var(--tx,0)*-14px) calc(var(--ty,0)*-10px);transition:translate .35s ease-out;animation:cola .7s 1.9s cubic-bezier(.3,1.5,.5,1) backwards}
+.n1{--r:-6deg}.n2{--r:5deg;animation-delay:2.2s}
+@keyframes cola{from{opacity:0;transform:translateY(-80px) rotate(calc(var(--r)*3)) scale(1.25)}}
+.cta,.teste{translate:var(--ix,0) var(--iy,0)}

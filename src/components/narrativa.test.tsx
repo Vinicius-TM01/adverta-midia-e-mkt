@@ -16,7 +16,7 @@ describe("seções narrativas", () => {
   });
   it("Virada mantém a frase do PDF", () => {
     render(<Virada />);
-    expect(screen.getByText(/constrói autoridade/i)).toBeInTheDocument();
+    expect(document.body.textContent).toMatch(/Postar sem direção gera movimento, mas não constrói autoridade\./);
     expect(screen.getByText(/autoridade é o que vende/i)).toBeInTheDocument();
   });
   it("PorQueAntes mostra Sem e Com", () => {

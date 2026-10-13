@@ -23,5 +23,5 @@ a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--marca-texto);outline-offset:3px}
 .container{padding-inline:var(--pad)}
 .papel{background:linear-gradient(var(--linha) 1px,transparent 1px) 0 0/100% 38px,var(--fundo)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001s!important;animation-delay:0s!important;transition-duration:.001s!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001s!important}}
 @media (max-width:1280px){:root{--rota-display:none}}

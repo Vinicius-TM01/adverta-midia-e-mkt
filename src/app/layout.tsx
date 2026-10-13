@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Caveat, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import "./movimento.css";
 import { SITE_URL, TITULO, DESCRICAO } from "@/lib/seo";
 import { Analytics } from "@/components/Analytics";
 
@@ -22,6 +23,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${display.variable} ${mao.variable} ${mono.variable}`}>
+      <head>
+        {/* Marca a página como animável antes da pintura; sem JS ou com movimento reduzido nada fica escondido. */}
+        <script dangerouslySetInnerHTML={{ __html: `if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("mov")` }} />
+      </head>
       <body>
         {children}
         <Analytics />

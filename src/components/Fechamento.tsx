@@ -6,8 +6,8 @@ const ANO = 2026;
 export function Fechamento() {
   return (
     <footer id="contato" className={`container ${s.fechamento}`}>
-      <p className={s.rotulo}>próximo passo</p>
-      <h2 className={s.titulo}>Uma conversa inicial para alinhar o início do planejamento.</h2>
+      <p className={s.rotulo} data-revela="escreve">próximo passo</p>
+      <h2 className={s.titulo} data-revela="sobe">Uma conversa inicial para alinhar o início do planejamento.</h2>
       <a className={s.cta} href={buildWhatsAppUrl(MENSAGENS.inicial)}>Agendar conversa inicial →</a>
       <ul className={s.contatos}>
         <li><a href="mailto:arielafelicia@advertamkt.com.br">arielafelicia@advertamkt.com.br</a></li>

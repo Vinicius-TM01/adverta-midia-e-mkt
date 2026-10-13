@@ -27,3 +27,18 @@
 .logos .largo{grid-column:span 2}
 @media (max-width:420px){.logos .largo{grid-column:auto}}
 @media (max-width:900px){.sobre{grid-template-columns:1fr}.sobreFoto{max-width:380px}}
+
+/* hover e abertura suave */
+.logos li{transition:transform .25s,box-shadow .25s,background-color .3s}
+.logos li:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 14px 24px -10px rgba(139,63,217,.8)}
+.itens li{transition:transform .2s,background-color .2s,border-color .2s}
+.itens li:hover{transform:translateY(-3px) rotate(-1deg);background:var(--roxo-vivo);border-color:var(--marca-texto)}
+.pergunta summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.pergunta summary::-webkit-details-marker{display:none}
+.pergunta summary::after{content:"+";flex:none;font-family:var(--font-mono),monospace;font-weight:400;font-size:1.6rem;color:var(--marca-texto);transition:transform .3s}
+.pergunta summary:hover{color:var(--roxo-claro)}
+.pergunta[open] summary::after{transform:rotate(135deg)}
+.pergunta[open] p{animation:abre .4s ease both}
+@keyframes abre{from{opacity:0;transform:translateY(-8px)}}
+.cta{transition:transform .2s,box-shadow .2s}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--fundo)}

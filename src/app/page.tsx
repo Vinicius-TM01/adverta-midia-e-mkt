@@ -10,6 +10,8 @@ import { Prova } from "@/components/Prova";
 import { Execucao } from "@/components/Execucao";
 import { Faq } from "@/components/Faq";
 import { Fechamento } from "@/components/Fechamento";
+import { Faixa } from "@/components/Faixa";
+import { Movimento } from "@/components/Movimento";
 import { Rota } from "@/components/Rota";
 import { WhatsAppFlutuante } from "@/components/WhatsAppFlutuante";
 import { buildJsonLd, serializeJsonLd } from "@/lib/seo";
@@ -21,6 +23,7 @@ export default function Home() {
       <main className="papel" style={{ position: "relative" }}>
         <Rota />
         <Hero />
+        <Faixa />
         <Erro />
         <Virada />
         <OPlano />
@@ -34,6 +37,7 @@ export default function Home() {
       </main>
       <Fechamento />
       <WhatsAppFlutuante />
+      <Movimento />
     </>
   );
 }
