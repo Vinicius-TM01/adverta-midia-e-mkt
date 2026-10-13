@@ -2,8 +2,9 @@ import { buildJsonLd, serializeJsonLd, SITE_URL } from "./seo";
 import { FAQ } from "@/content/faq";
 
 describe("buildJsonLd", () => {
-  const g = buildJsonLd() as { "@graph": any[] };
-  const por = (t: string) => g["@graph"].find((n) => n["@type"] === t);
+  type No = Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
+  const g = buildJsonLd() as unknown as { "@graph": No[] };
+  const por = (t: string): No => g["@graph"].find((n) => n["@type"] === t)!;
   it("usa o nome com acento", () => {
     expect(por("Person").name).toBe("Ariela Felícia");
     expect(JSON.stringify(g)).not.toMatch(/Ariela Felicia/);

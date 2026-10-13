@@ -4,9 +4,9 @@ import "./globals.css";
 import { SITE_URL, TITULO, DESCRICAO } from "@/lib/seo";
 import { Analytics } from "@/components/Analytics";
 
-const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
-const mao = Caveat({ subsets: ["latin"], variable: "--font-mao", display: "swap" });
-const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
+const display = Bricolage_Grotesque({ subsets: ["latin"], weight: ["500", "800"], variable: "--font-display", display: "swap" });
+const mao = Caveat({ subsets: ["latin"], weight: ["700"], variable: "--font-mao", display: "swap" });
+const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

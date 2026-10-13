@@ -1,20 +1,27 @@
 :root {
-  --papel: #EFEAF8;
-  --papel-2: #E4DCF2;
-  --tinta: #1E0F33;
+  /* Preto-violeta e roxo como base; amarelo e laranja só como acento. */
+  --fundo: #0E0719;
+  --fundo-2: #160B26;
+  --superficie: #1F1136;
   --roxo: #6A24B0;
+  --roxo-vivo: #8B3FD9;
   --roxo-claro: #B58BE6;
+  --texto: #F1EAFB;
+  --texto-suave: rgba(241, 234, 251, 0.76);
+  --linha: rgba(181, 139, 230, 0.14);
+  --papel: #EFEAF8;
+  --tinta: #1E0F33;
   --marca-texto: #FFD43B;
   --laranja: #FF6B1A;
   --gutter: clamp(20px, 4vw, 64px);
   --pad: max(var(--gutter), calc((100vw - 1360px) / 2));
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--papel);color:var(--tinta);font-family:var(--font-display),system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;background:var(--fundo)}
+body{background:var(--fundo);color:var(--texto);font-family:var(--font-display),system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:3px solid var(--roxo);outline-offset:3px}
+:focus-visible{outline:3px solid var(--marca-texto);outline-offset:3px}
 .container{padding-inline:var(--pad)}
-.papel{background:linear-gradient(var(--papel-2) 1px,transparent 1px) 0 0/100% 38px,var(--papel)}
+.papel{background:linear-gradient(var(--linha) 1px,transparent 1px) 0 0/100% 38px,var(--fundo)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001s!important;animation-delay:0s!important;transition-duration:.001s!important}}
 @media (max-width:1280px){:root{--rota-display:none}}

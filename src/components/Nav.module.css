@@ -1,9 +1,9 @@
 .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;position:relative;z-index:5}
-.marca{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
-.marca b{display:grid;place-items:center;width:34px;height:34px;background:var(--roxo);color:var(--papel);border-radius:50%;font-size:1.05rem}
-.nav ul{display:flex;gap:30px;list-style:none;font-family:var(--font-mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em}
-.nav ul a{border-bottom:2px solid transparent;padding-bottom:2px}
-.nav ul a:hover{border-color:var(--roxo)}
-.pill{font-family:var(--font-mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;background:var(--tinta);color:var(--papel);padding:12px 18px;border-radius:2px}
-.pill:hover{background:var(--roxo)}
+.marca{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;color:var(--texto)}
+.marca::before{content:"A";display:grid;place-items:center;width:34px;height:34px;background:var(--roxo-vivo);color:#fff;border-radius:50%;font-size:1.05rem}
+.nav ul{display:flex;gap:30px;list-style:none;font-family:var(--font-mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--texto-suave)}
+.nav ul a{border-bottom:2px solid transparent;padding-bottom:2px;transition:color .2s}
+.nav ul a:hover{color:var(--texto);border-color:var(--marca-texto)}
+.pill{font-family:var(--font-mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;background:var(--roxo);color:var(--texto);padding:12px 18px;border-radius:2px;border:1px solid rgba(181,139,230,.5)}
+.pill:hover{background:var(--roxo-vivo)}
 @media (max-width:900px){.nav ul{display:none}}

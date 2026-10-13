@@ -9,14 +9,21 @@ export function Rota() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const len = el.getTotalLength();
     el.style.strokeDasharray = `${len}`;
+    let quadro = 0;
     const draw = () => {
+      quadro = 0;
       const max = document.documentElement.scrollHeight - window.innerHeight;
       const p = max > 0 ? Math.min(1, window.scrollY / max) : 1;
       el.style.strokeDashoffset = `${len * (1 - p)}`;
     };
-    draw();
-    window.addEventListener("scroll", draw, { passive: true });
-    return () => window.removeEventListener("scroll", draw);
+    // Leitura de layout só dentro de requestAnimationFrame: evita reflow forçado na montagem e no scroll.
+    const agendar = () => { if (!quadro) quadro = requestAnimationFrame(draw); };
+    agendar();
+    window.addEventListener("scroll", agendar, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", agendar);
+      if (quadro) cancelAnimationFrame(quadro);
+    };
   }, []);
   return (
     <svg aria-hidden="true" viewBox="0 0 40 1000" preserveAspectRatio="none"

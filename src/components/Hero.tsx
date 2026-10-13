@@ -7,7 +7,7 @@ const PILARES = ["Posicionamento", "Público", "Jornada", "Territórios e temas"
 
 export function Hero() {
   return (
-    <header className={styles.hero}>
+    <header id="inicio" className={styles.hero}>
       <Nav />
       <div className={styles.stage}>
         <div className={styles.texto}>
@@ -31,7 +31,7 @@ export function Hero() {
         <figure className={styles.foto}>
           <span className={styles.fita} aria-hidden="true" />
           <div className={styles.papel}>
-            <Image src="/ariela-estudio.jpg" alt="Ariela Felícia, estrategista de marketing e fundadora da Adverta, de blazer roxo" width={1200} height={1800} priority sizes="(max-width:900px) 84vw, 440px" />
+            <Image src="/ariela-estudio.jpg" alt="Ariela Felícia, estrategista de marketing e fundadora da Adverta, de blazer roxo" width={1200} height={1800} preload fetchPriority="high" sizes="(max-width:900px) 84vw, 440px" />
             <figcaption className={styles.legenda}><span>Ariela Felícia</span><small>Fundadora · Adverta</small></figcaption>
           </div>
           <div className={`${styles.nota} ${styles.n1}`}><b>8</b><span>anos de estratégia</span></div>

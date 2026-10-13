@@ -4,7 +4,7 @@ import { buildWhatsAppUrl, MENSAGENS } from "@/lib/whatsapp";
 export function Nav() {
   return (
     <nav className={styles.nav} aria-label="Principal">
-      <a className={styles.marca} href="#" aria-label="Adverta, início"><b aria-hidden="true">A</b>adverta</a>
+      <a className={styles.marca} href="#" aria-label="Adverta, início">adverta</a>
       <ul>
         <li><a href="#planejamento">Planejamento</a></li>
         <li><a href="#sobre">Sobre</a></li>
