@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./Hero.module.css";
 import { Nav } from "./Nav";
-import { buildWhatsAppUrl, MENSAGENS } from "@/lib/whatsapp";
+import { CtaWhatsApp } from "./CtaWhatsApp";
 
 const PILARES = ["Posicionamento", "Público", "Jornada", "Territórios e temas", "Canais", "Indicadores"];
 
@@ -24,7 +24,7 @@ export function Hero() {
           </h1>
           <p className={styles.sub}>Planejamento estratégico de conteúdo para negócios em Cacoal e região. <em>Antes do primeiro post</em>, definimos o que comunicar, para quem e com qual objetivo.</p>
           <div className={styles.acoes}>
-            <a className={styles.cta} href={buildWhatsAppUrl(MENSAGENS.inicial)}>Agendar conversa inicial →</a>
+            <CtaWhatsApp className={styles.cta} />
             <a className={styles.teste} href="#teste">Fazer o teste do achismo</a>
           </div>
         </div>
