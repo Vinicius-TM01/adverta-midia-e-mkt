@@ -45,3 +45,6 @@ qa/
 lighthouse-*.json
 .superpowers/
 !.env.example
+
+# recortes gerados pelo gerar_icones.py
+scripts/.cache/

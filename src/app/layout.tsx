@@ -16,7 +16,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     title: TITULO, description: DESCRICAO, url: SITE_URL, siteName: "Adverta", locale: "pt_BR", type: "website",
-    images: [{ url: "/ariela-estudio.jpg", width: 1200, height: 1800, alt: "Ariela Felícia, fundadora da Adverta" }],
   },
 };
 
