@@ -1,0 +1,41 @@
+/* Apresentação de cliente no tema da Adverta (preto-roxo); as pranchas ficam em destaque, sem enfeite. */
+.pagina { background: var(--fundo); color: var(--texto); min-height: 100vh; padding: 0 var(--pad) 96px; }
+
+.topo { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 28px 0; border-bottom: 1px solid var(--linha); }
+.marca { font: 800 26px/1 var(--font-display), sans-serif; letter-spacing: -0.02em; }
+.rotulo { font: 400 13px/1.4 var(--font-mono), monospace; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.08em; text-align: right; }
+
+.abertura { padding: clamp(48px, 9vw, 120px) 0 clamp(40px, 6vw, 72px); display: grid; gap: 22px; max-width: 980px; }
+.kicker { font: 400 13px/1 var(--font-mono), monospace; color: var(--roxo-claro); text-transform: uppercase; letter-spacing: 0.12em; }
+.abertura h1 { font: 800 clamp(2.6rem, 7vw, 5.4rem)/0.98 var(--font-display), sans-serif; letter-spacing: -0.035em; }
+.abertura h1 em { font-style: normal; color: var(--roxo-claro); }
+.lead { font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.55; color: var(--texto-suave); max-width: 62ch; }
+
+.indice { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.indice a { display: inline-flex; gap: 10px; align-items: baseline; padding: 12px 18px; border: 1px solid var(--linha); border-radius: 999px; color: var(--texto); text-decoration: none; font-weight: 500; transition: border-color .2s, background .2s; }
+.indice a b { font: 400 13px/1 var(--font-mono), monospace; color: var(--roxo-claro); }
+.indice a:hover, .indice a:focus-visible { border-color: var(--roxo-claro); background: var(--fundo-2); outline: none; }
+
+.slide { margin: 0 0 28px; }
+.slide img { display: block; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); }
+.slide figcaption { margin-top: 10px; font: 400 13px/1.4 var(--font-mono), monospace; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.08em; }
+
+.opcao { padding-top: clamp(40px, 7vw, 88px); scroll-margin-top: 16px; }
+.cab { display: flex; gap: clamp(16px, 3vw, 32px); align-items: baseline; margin-bottom: 24px; border-top: 1px solid var(--linha); padding-top: 28px; }
+.num { font: 800 clamp(2.4rem, 5vw, 4rem)/1 var(--font-display), sans-serif; color: var(--roxo-vivo); }
+.cab h2 { font: 800 clamp(1.6rem, 3.4vw, 2.6rem)/1.05 var(--font-display), sans-serif; letter-spacing: -0.025em; }
+.cab p { margin-top: 8px; color: var(--texto-suave); max-width: 60ch; }
+
+.fecho { margin-top: clamp(56px, 9vw, 120px); padding: clamp(36px, 6vw, 72px); border-radius: 16px; background: var(--superficie); display: grid; gap: 18px; justify-items: start; }
+.fecho h2 { font: 800 clamp(1.9rem, 4.4vw, 3.4rem)/1.02 var(--font-display), sans-serif; letter-spacing: -0.03em; }
+.fecho p { color: var(--texto-suave); max-width: 58ch; font-size: 1.1rem; line-height: 1.55; }
+.cta { margin-top: 8px; display: inline-block; padding: 16px 26px; border-radius: 999px; background: var(--roxo-vivo); color: #fff; font-weight: 600; text-decoration: none; transition: background .2s; }
+.cta:hover, .cta:focus-visible { background: var(--roxo); outline: none; }
+
+.rodape { margin-top: 56px; font: 400 13px/1 var(--font-mono), monospace; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 640px) {
+  .topo { flex-direction: column; align-items: flex-start; }
+  .rotulo { text-align: left; }
+  .slide img { border-radius: 6px; }
+}
